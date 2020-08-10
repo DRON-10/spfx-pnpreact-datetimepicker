@@ -23,8 +23,8 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
       spfxContext: this.props.context  
     });  
     this.state = {  
-      projectTitle: '',  
-      projectDescription: '',  
+      First_Name: '',  
+      Last_Name: '',  
       startDate: new Date(),  
       endDate: new Date(),  
       showMessageBar: false  
@@ -75,12 +75,12 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
   }  
   @autobind  
   private __onchangedTitle(Title: any): void {  
-    this.setState({ projectTitle: Title });  
+    this.setState({ First_Name: Title });  
   }  
   
   @autobind  
   private __onchangedDescription(description: any): void {  
-    this.setState({ projectDescription: description });  
+    this.setState({ Last_Name: description });  
   }  
   
   @autobind  
@@ -97,20 +97,20 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
   private async __createItem() {  
     try {  
       await sp.web.lists.getByTitle('DateRangeList').items.add({  
-        Title: this.state.projectTitle,  
-        description: this.state.projectDescription,  
+        Title: this.state.First_Name,  
+        description: this.state.Last_Name,  
         DateFrom: this.state.startDate,  
         DateTo: this.state.endDate  
       });  
       this.setState({  
-        message: "Item: " + this.state.projectTitle + " - created successfully!",  
+        message: "Item: " + this.state.First_Name + " - created successfully!",  
         showMessageBar: true,  
         messageType: MessageBarType.success  
       });  
     }  
     catch (error) {  
       this.setState({  
-        message: "Item " + this.state.projectTitle + " creation failed with error: " + error,  
+        message: "Item " + this.state.First_Name + " creation failed with error: " + error,  
         showMessageBar: true,  
         messageType: MessageBarType.error  
       });  
