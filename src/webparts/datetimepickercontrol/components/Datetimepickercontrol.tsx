@@ -35,7 +35,7 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
     return (  
   
       <div className={styles.row}>  
-        <h1>Create New Project</h1>  
+        <h1>Nomination</h1>  
         {  
           this.state.showMessageBar  
             ?  
@@ -48,8 +48,8 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
             null  
         }  
         <div className={styles.row}>  
-          <TextField label="Project Title" required onChanged={this.__onchangedTitle} />  
-          <TextField label="Project Description" required onChanged={this.__onchangedDescription} />  
+          <TextField label="First Name" required onChanged={this.__onchangedTitle} />  
+          <TextField label="Last Name" required onChanged={this.__onchangedDescription} />  
           <DateTimePicker label="Start Date"  
             dateConvention={DateConvention.DateTime}  
             timeConvention={TimeConvention.Hours12}  
@@ -67,7 +67,7 @@ export default class Datetimepickercontrol extends React.Component<IDatetimepick
             onChange={this.__onchangedEndDate}  
           />  
           <div className={styles.button}>  
-            <button type="button" className="btn btn-primary" onClick={this.__createItem}>Submit</button>  
+            <button type="button" className="btn btn-primary" onClick={this.__createItem}>Save</button>  
           </div>  
         </div>  
       </div>  
